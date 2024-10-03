@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsanchez <lsanchez@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: lsanchez <lsanchez@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 12:28:54 by lsanchez          #+#    #+#             */
-/*   Updated: 2024/08/27 21:15:08 by lsanchez         ###   ########.fr       */
+/*   Created: 2024/09/23 09:45:08 by lsanchez          #+#    #+#             */
+/*   Updated: 2024/09/23 09:45:21 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
-	while (n > 0 && *s1 && *s2 && (*s1 == *s2))
-	{
-		s1++;
-		s2++;
-		n--;
-	}
-	if (n == 0)
-	{
-		return (0);
-	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	return (c >= ' ' && c <= '~');
 }

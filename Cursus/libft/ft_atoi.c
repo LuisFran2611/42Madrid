@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsanchez <lsanchez@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: lsanchez <lsanchez@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/15 12:07:50 by lsanchez          #+#    #+#             */
-/*   Updated: 2024/08/19 11:18:40 by lsanchez         ###   ########.fr       */
+/*   Created: 2024/09/23 09:34:00 by lsanchez          #+#    #+#             */
+/*   Updated: 2024/09/27 08:35:19 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	resultado;
 	int	sig;
@@ -21,7 +21,7 @@ int	ft_atoi(char *str)
 	sig = 1;
 	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
 		str++;
-	while (*str == '-' || *str == '+')
+	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 			sig = sig * (-1);
@@ -34,10 +34,3 @@ int	ft_atoi(char *str)
 	}
 	return (resultado * sig);
 }
-
-/*int main()
-{
-	char  c[] =" ---+--+1234ab567";
-	printf("%d",ft_atoi(c));
-	return 0;
-}*/

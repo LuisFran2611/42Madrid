@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsanchez <lsanchez@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: lsanchez <lsanchez@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 13:02:06 by lsanchez          #+#    #+#             */
-/*   Updated: 2024/08/15 11:04:27 by lsanchez         ###   ########.fr       */
+/*   Created: 2024/09/23 10:36:03 by lsanchez          #+#    #+#             */
+/*   Updated: 2024/09/24 12:51:28 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	size_dest;
-	unsigned int	size_src;
-	unsigned int	i;
+	size_t	size_dest;
+	size_t	size_src;
+	size_t	i;
 
 	size_dest = 0;
 	while (size_dest < size && dest[size_dest])
