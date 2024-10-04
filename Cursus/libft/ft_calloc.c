@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 09:41:16 by lsanchez          #+#    #+#             */
-/*   Updated: 2024/09/29 18:26:31 by lsanchez         ###   ########.fr       */
+/*   Updated: 2024/10/04 10:29:53 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	*ft_calloc(size_t num_ele, size_t size_ele)
 	ptr = malloc(num_ele * size_ele);
 	if (!ptr)
 		return (NULL);
-	else
-		ft_memset(ptr, 0, num_ele * size_ele);
+	ft_memset(ptr, 0, num_ele * size_ele);
 	return (ptr);
 }

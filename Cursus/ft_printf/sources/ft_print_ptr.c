@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 19:29:13 by lsanchez          #+#    #+#             */
-/*   Updated: 2024/10/03 19:23:16 by lsanchez         ###   ########.fr       */
+/*   Updated: 2024/10/04 10:50:37 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,16 @@ void	ft_print_ptr(size_t ptr, int *length)
 
 	base_hex = "0123456789abcdef";
 	i = 0;
+	if(!ptr)
+	{
+		return (ft_print_str("(nil)", length));
+	}
 	write(1, "0x", 2);
 	(*length) += 2;
 	while (ptr != 0)
 	{
-		hex_num[i] = base_hex[ptr % 16];
+		hex_num[i++] = base_hex[ptr % 16];
 		ptr = ptr / 16;
-		i++;
 	}
 	while (i--)
 		ft_print_char(hex_num[i], length);
