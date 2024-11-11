@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 19:29:10 by lsanchez          #+#    #+#             */
-/*   Updated: 2024/10/03 19:23:16 by lsanchez         ###   ########.fr       */
+/*   Updated: 2024/10/06 13:27:54 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_int(int num, int *length)
 {
-	char n;
+	char	n;
 
 	if (num == -2147483648)
 	{

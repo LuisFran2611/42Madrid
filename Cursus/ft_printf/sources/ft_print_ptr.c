@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 19:29:13 by lsanchez          #+#    #+#             */
-/*   Updated: 2024/10/04 10:50:37 by lsanchez         ###   ########.fr       */
+/*   Updated: 2024/10/06 13:27:54 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_print_ptr(size_t ptr, int *length)
 
 	base_hex = "0123456789abcdef";
 	i = 0;
-	if(!ptr)
+	if (!ptr)
 	{
 		return (ft_print_str("(nil)", length));
 	}
