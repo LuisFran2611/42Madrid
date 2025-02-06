@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 13:12:07 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/01/27 11:23:33 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/06 18:21:14 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int	main(int argc, char **argv, char **env)
 {
 	t_pipex	pipex;
-
+	
 	if (argc != 5)
 		return (1);
 	pipex.proc.envp = env;
 	pipex.files.inf = argv[1];
-	pipex.proc.cmd_args[0] = ft_split(argv[2], ' ');
-	pipex.proc.cmd_args[1] = ft_split(argv[3], ' ');
+	pipex.proc.cmd_args[0] = ft_split_quote(argv[2]);
+	pipex.proc.cmd_args[1] = ft_split_quote(argv[3]);
 	pipex.files.outf = argv[4];
 	check_files(&pipex);
 	if (!is_path(pipex.proc.cmd_args[0][0]))

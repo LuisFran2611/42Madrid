@@ -6,7 +6,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # Archivos del proyecto
-SRC = pipex.c free_recoures.c proces_files.c process.c
+SRC = pipex.c free_recoures.c proces_files.c process.c error.c
 OBJ = $(SRC:.c=.o)
 
 # Archivos de la libft

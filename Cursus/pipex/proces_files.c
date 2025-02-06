@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 16:13:51 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/01/26 19:58:40 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/06 18:34:42 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,19 @@ void	check_files(t_pipex *pipex)
 	pipex->files.inf_fd = open(pipex->files.inf, O_RDONLY);
 	if (pipex->files.inf_fd == -1)
 	{
-		perror("Error: No se puede acceder a infile");
-		exit(EXIT_FAILURE);
+		perror(pipex->files.inf);
+		 pipex->files.inf_fd = open("/dev/null", O_RDONLY);
+        if (pipex->files.inf_fd == -1)
+        {
+            perror("/dev/null");
+            exit(EXIT_FAILURE);
+        }
 	}
 	pipex->files.outf_fd = open(pipex->files.outf, O_WRONLY | O_CREAT | O_TRUNC,
 			0644);
 	if (pipex->files.outf_fd == -1)
 	{
-		perror("Error: No se puede crear o escribir en outfile");
+		perror(pipex->files.outf);
 		close(pipex->files.inf_fd);
 		exit(EXIT_FAILURE);
 	}
@@ -53,6 +58,8 @@ char	*get_path(t_pipex *pipex)
 {
 	int	i;
 
+	if (!pipex->proc.envp || !pipex->proc.envp[0])
+		return (NULL);
 	i = 0;
 	while (pipex->proc.envp[i])
 	{
@@ -69,12 +76,19 @@ void	proces_path(t_pipex *pipex, int in)
 	int		i;
 
 	path = get_path(pipex);
+	if(!path)
+		return;
 	pipex->proc.path[in] = ft_split(path, ':');
 	i = 0;
 	while (pipex->proc.path[in][i] != NULL)
 	{
 		pipex->proc.path[in][i] = cat(pipex->proc.path[in][i],
 				pipex->proc.cmd_args[in][0]);
+		if(access(pipex->proc.path[in][i], X_OK) == 0)
+		{
+			(pipex->proc.cmd_args[in][0]=pipex->proc.path[in][i]);
+			return;
+		}
 		i++;
 	}
 }

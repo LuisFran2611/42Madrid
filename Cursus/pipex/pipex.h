@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 13:12:10 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/01/26 19:57:34 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/06 18:44:12 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,9 @@ void			proces_path(t_pipex *pipex, int in);
 void			create_proces(t_pipex *pipex);
 void			free_recourses(t_pipex *pipex);
 int				is_path(char *str);
+char			*get_path(t_pipex *pipex);
+void 			error_fork(t_pipex *pipex);
+void 			error1(t_pipex *pipex);
+void 			error2(t_pipex *pipex);
 
 #endif
