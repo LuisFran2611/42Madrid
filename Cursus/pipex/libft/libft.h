@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 11:19:10 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/02/06 18:05:21 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/06 19:24:36 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,5 @@ char				**copy_file(char **original, int rows);
 int					is_abs_path(char *str);
 int					is_r_path(char *str);
 char				**ft_split_pool(char *str, char *charset);
-char 				**ft_split_quote(const char *s);
 
 #endif

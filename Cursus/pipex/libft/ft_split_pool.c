@@ -95,8 +95,8 @@ char	**ft_split_pool(char *str, char *charset)
 		i++;
 	}
 	strs[i] = (char *)malloc(ft_strlen(str) + 1);
-	if (!strs[i]) 
+	if (!strs[i])
 		return (NULL);
 	ft_strncpy(strs[i], str, ft_strlen(str));
-	return (strs[i + 1] = NULL,strs);
+	return (strs[i + 1] = NULL, strs);
 }

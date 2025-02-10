@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 13:12:10 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/02/06 18:44:12 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/10 13:10:10 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ typedef struct s_files
 
 typedef struct s_process
 {
+	char		*exe;
 	int			pipes[2];
+	int			status[2];
 	pid_t		pids[2];
 	char		**cmd_args[2];
 	char		**path[2];
@@ -49,8 +51,17 @@ void			create_proces(t_pipex *pipex);
 void			free_recourses(t_pipex *pipex);
 int				is_path(char *str);
 char			*get_path(t_pipex *pipex);
-void 			error_fork(t_pipex *pipex);
-void 			error1(t_pipex *pipex);
-void 			error2(t_pipex *pipex);
+void			error_fork(t_pipex *pipex);
+void			error1(t_pipex *pipex);
+void			error2(t_pipex *pipex, int in);
+const char		*skip_spaces(const char *s);
+const char		*advance_token(const char *s);
+int				count_tokens(const char *s);
+int				token_length(const char *s);
+char			*copy_quoted_token(const char **s_ptr, int len);
+char			*copy_unquoted_token(const char **s_ptr, int len);
+char			*extract_token(const char **s_ptr);
+char			**fill_tokens(const char *s, char **result);
+char			**ft_split_quote(const char *s);
 
 #endif
