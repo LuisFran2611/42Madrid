@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 18:51:20 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/01/25 11:25:40 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/11 11:51:43 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ typedef struct s_game
 }				t_game;
 
 int				check_map(t_game *game);
-void			calc_map(t_game *game);
+int				calc_map(t_game *game);
 void			free_char_matrix(char **matrix);
 int				is_rectangular(t_game *game);
 int				inicialice(t_game *game);
@@ -90,4 +90,6 @@ void			img_down(t_game *game);
 void			img_left(t_game *game);
 void			img_right(t_game *game);
 int				is_valid(char **map_copy, int y[2]);
+int 			is_object(char c);
+
 #endif // SO_LONG_H

@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 10:29:33 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/01/25 11:02:05 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:13:29 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ int	main(int argc, char **argv)
 		mlx_hook(game.data.win_ptr, 17, 0, close_window, &game.data);
 		mlx_loop(game.data.mlx_ptr);
 	}
+	else
+	ft_printf("Error\nNumero de argumentos de entrada no valido\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 18:51:26 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/01/25 11:03:28 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/11 11:50:44 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,31 +52,33 @@ void	inicialice_env(t_game *game)
 			&game->env.img_exit.height);
 }
 
-void	calc_map(t_game *game)
+int	calc_map(t_game *game)
 {
-	int	x;
-	int	y;
+	int	x[2];
 
-	y = 0;
-	while (y < game->map.height)
+	x[0] = 0;
+	while (x[0]< game->map.height)
 	{
-		x = 0;
-		while (x < game->map.width)
+		x[1] = 0;
+		while (x[1] < game->map.width)
 		{
-			if (game->map.grid[y][x] == 'C')
+			if(!is_object(game->map.grid[x[0]][x[1]]))
+				return(1);
+			else if (game->map.grid[x[0]][x[1]] == 'C')
 				game->map.spc_char[0]++;
-			else if (game->map.grid[y][x] == 'P')
+			else if (game->map.grid[x[0]][x[1]] == 'P')
 			{
 				game->map.spc_char[1]++;
-				game->player.x = x;
-				game->player.y = y;
+				game->player.x = x[1];
+				game->player.y = x[0];
 			}
-			else if (game->map.grid[y][x] == 'E')
+			else if (game->map.grid[x[0]][x[1]] == 'E')
 				game->map.spc_char[2]++;
-			x++;
+			x[1]++;
 		}
-		y++;
+		x[0]++;
 	}
+	return (0);
 }
 
 int	inicialice(t_game *game)
@@ -87,7 +89,11 @@ int	inicialice(t_game *game)
 	inicialice_env(game);
 	inicilice_map(game);
 	inicialice_player(game);
-	calc_map(game);
+	if(calc_map(game))
+	{
+		ft_printf("Error\nMapa No valido\n");
+		return(1);
+	}
 	if (check_map(game))
 		return (1);
 	game->data.win_ptr = mlx_new_window(game->data.mlx_ptr,

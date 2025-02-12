@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 18:51:10 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/01/25 11:21:41 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/11 14:13:14 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,20 @@
 int	is_rectangular(t_game *game)
 {
 	int	i;
-
+	int len;
 	if (game->map.width == game->map.height)
 		return (0);
 	i = 0;
 	while (i < game->map.height)
 	{
-		if (ft_strlen(game->map.grid[i]) - 1 != game->map.width)
-		{
+		len = ft_strlen(game->map.grid[i]);
+		if (game->map.grid[i][len-1] != '\n' && i != game->map.height-1)
 			return (0);
-		}
+		if (len - 1 != game->map.width && i != game->map.height-1)
+			return (0);
+		if ((i == game->map.height-1 && len == game->map.width && game->map.grid[i][len-1] == '\n')||
+			(i == game->map.height-1 && len - 1 == game->map.width && game->map.grid[i][len-1] != '\n'))
+			return (0);
 		i++;
 	}
 	return (1);
@@ -42,6 +46,7 @@ int	is_closed(t_game *game)
 			return (0);
 		x++;
 	}
+	x = 0;
 	while (x < game->map.height)
 	{
 		if (game->map.grid[x][0] != '1' || game->map.grid[x][game->map.width
