@@ -42,4 +42,4 @@ re: fclean all
 # Regla para depuración (opcional)
 debug: CFLAGS += -g -fsanitize=address
 debug: re
-																					.PHONY : all clean fclean re debug
+.PHONY : all clean fclean re debug
