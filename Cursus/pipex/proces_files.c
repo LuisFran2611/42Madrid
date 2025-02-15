@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 16:13:51 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/02/10 13:11:04 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/14 08:54:52 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	check_files(t_pipex *pipex)
 		ft_putstr_fd(": ", 2);
 		perror(pipex->files.outf);
 		close(pipex->files.inf_fd);
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 }
 
