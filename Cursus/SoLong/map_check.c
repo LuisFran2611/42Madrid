@@ -15,19 +15,22 @@
 int	is_rectangular(t_game *game)
 {
 	int	i;
-	int len;
+	int	len;
+
 	if (game->map.width == game->map.height)
 		return (0);
 	i = 0;
 	while (i < game->map.height)
 	{
 		len = ft_strlen(game->map.grid[i]);
-		if (game->map.grid[i][len-1] != '\n' && i != game->map.height-1)
+		if (game->map.grid[i][len - 1] != '\n' && i != game->map.height - 1)
 			return (0);
-		if (len - 1 != game->map.width && i != game->map.height-1)
+		if (len - 1 != game->map.width && i != game->map.height - 1)
 			return (0);
-		if ((i == game->map.height-1 && len == game->map.width && game->map.grid[i][len-1] == '\n')||
-			(i == game->map.height-1 && len - 1 == game->map.width && game->map.grid[i][len-1] != '\n'))
+		if ((i == game->map.height - 1 && len == game->map.width
+				&& game->map.grid[i][len - 1] == '\n') || (i == game->map.height
+				- 1 && len - 1 == game->map.width && game->map.grid[i][len
+				- 1] != '\n'))
 			return (0);
 		i++;
 	}

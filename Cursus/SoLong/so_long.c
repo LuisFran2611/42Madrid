@@ -53,6 +53,6 @@ int	main(int argc, char **argv)
 		mlx_loop(game.data.mlx_ptr);
 	}
 	else
-	ft_printf("Error\nNumero de argumentos de entrada no valido\n");
+		ft_printf("Error\nNumero de argumentos de entrada no valido\n");
 	return (0);
 }

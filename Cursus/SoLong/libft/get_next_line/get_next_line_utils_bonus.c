@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 10:05:56 by lsanchez          #+#    #+#             */
-/*   Updated: 2024/11/04 10:07:20 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/15 10:21:01 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	i = 0;
 	while (s2 && s2[i])
 		i++;
-	s = ft_calloc(len + i + 1, sizeof * s);
+	s = ft_calloc(len + i + 1, sizeof(*s));
 	if (!s)
 		return (NULL);
 	len = -1;
@@ -62,7 +62,7 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	while (s1[i])
 		i++;
-	s2 = ft_calloc(i + 1, sizeof * s2);
+	s2 = ft_calloc(i + 1, sizeof (*s2));
 	if (!s2)
 		return (NULL);
 	i = 0;

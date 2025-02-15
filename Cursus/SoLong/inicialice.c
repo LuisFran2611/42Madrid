@@ -57,13 +57,13 @@ int	calc_map(t_game *game)
 	int	x[2];
 
 	x[0] = 0;
-	while (x[0]< game->map.height)
+	while (x[0] < game->map.height)
 	{
 		x[1] = 0;
 		while (x[1] < game->map.width)
 		{
-			if(!is_object(game->map.grid[x[0]][x[1]]))
-				return(1);
+			if (!is_object(game->map.grid[x[0]][x[1]]))
+				return (1);
 			else if (game->map.grid[x[0]][x[1]] == 'C')
 				game->map.spc_char[0]++;
 			else if (game->map.grid[x[0]][x[1]] == 'P')
@@ -89,10 +89,10 @@ int	inicialice(t_game *game)
 	inicialice_env(game);
 	inicilice_map(game);
 	inicialice_player(game);
-	if(calc_map(game))
+	if (calc_map(game))
 	{
 		ft_printf("Error\nMapa No valido\n");
-		return(1);
+		return (1);
 	}
 	if (check_map(game))
 		return (1);

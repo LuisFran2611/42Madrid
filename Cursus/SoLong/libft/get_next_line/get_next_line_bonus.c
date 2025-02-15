@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 10:03:35 by lsanchez          #+#    #+#             */
-/*   Updated: 2024/11/04 10:07:20 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/15 09:52:51 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*get_before_newline(const char *s)
 		i++;
 	if (s[i] && s[i] == '\n')
 		i++;
-	res = ft_calloc(i + 1, sizeof (*res));
+	res = ft_calloc(i + 1, sizeof(*res));
 	if (!res)
 		return (0);
 	i = 0;
@@ -53,7 +53,7 @@ char	*get_after_newline(const char *s)
 		i++;
 	if (s[i] && s[i] == '\n')
 		i++;
-	res = ft_calloc((j - i) + 1, sizeof (*res));
+	res = ft_calloc((j - i) + 1, sizeof(*res));
 	if (!res)
 		return (0);
 	j = 0;
@@ -70,7 +70,7 @@ void	ft_read_line(int fd, char **keep, char **tmp)
 	char	*buf;
 	int		r;
 
-	buf = malloc(sizeof (*buf) * (BUFFER_SIZE + 1));
+	buf = malloc(sizeof(*buf) * (BUFFER_SIZE + 1));
 	if (!buf)
 		return ;
 	r = 1;
@@ -107,9 +107,9 @@ char	*ft_parse_line(char **keep, char **tmp)
 
 char	*get_next_line(int fd)
 {
-	static char	*keep[1024];
-	char		*tmp;
-	char		*line;
+	static char		*keep[1024];
+	char			*tmp;
+	char			*line;
 
 	if (fd < 0 || fd >= 1024 || BUFFER_SIZE <= 0)
 		return (0);

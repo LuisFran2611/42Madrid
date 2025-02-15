@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 10:29:45 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/01/25 11:33:29 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/02/15 09:40:42 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ void	draw_map(t_game *game)
 
 void	gen_move(int keycode, t_game *game)
 {
-	if (ft_isup(keycode) && game->map.grid
-		[game->player.y - 1][game->player.x] != '1')
+	if (game->map.grid[game->player.y - 1][game->player.x] != '1'
+		&& ft_isup(keycode))
 	{
 		move_up(game);
 		img_up(game);

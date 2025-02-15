@@ -60,13 +60,7 @@ int	is_valid(char **map_copy, int y[2])
 	return (1);
 }
 
-int is_object(char c)
+int	is_object(char c)
 {
-	return(
-		c == '0' 
-		|| c == '1' 
-		|| c == 'P' 
-		|| c == 'C' 
-		|| c == 'E'
-	);
+	return (c == '0' || c == '1' || c == 'P' || c == 'C' || c == 'E');
 }

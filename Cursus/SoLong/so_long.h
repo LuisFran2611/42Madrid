@@ -90,6 +90,6 @@ void			img_down(t_game *game);
 void			img_left(t_game *game);
 void			img_right(t_game *game);
 int				is_valid(char **map_copy, int y[2]);
-int 			is_object(char c);
+int				is_object(char c);
 
 #endif // SO_LONG_H
