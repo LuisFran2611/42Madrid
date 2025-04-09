@@ -4,7 +4,7 @@ SRCS        = push_swap.c push.c radix_short.c reverse.c rotate.c swap.c 3_case.
 OBJS        = $(SRCS:.c=.o)
 
 CC          = gcc
-CFLAGS      = -Wall -Wextra -Werror
+CFLAGS      = -Wall -Wextra -Werror 
 INCLUDES    = -I. -Ilibft
 
 LIBFT_DIR   = libft
