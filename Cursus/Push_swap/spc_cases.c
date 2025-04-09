@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:39:23 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/04/09 08:30:46 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/04/09 13:32:08 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	sort_4(t_node **stack_a, t_node **stack_b)
 	sort_3(stack_a);
 	pa(stack_a, stack_b);
 }
+
 void	sort_3(t_node **stack_a)
 {
 	t_node	*head;

@@ -37,4 +37,3 @@ void	sort_132(t_node **stack_a)
 	sa(stack_a);
 	rra(stack_a);
 }
-

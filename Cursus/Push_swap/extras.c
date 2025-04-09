@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:44:47 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/04/09 10:59:13 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/04/09 13:32:08 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,28 +40,30 @@ t_node	*ft_stacklast(t_node *head)
 	}
 	return (tmp);
 }
-int ft_isrepit(t_node **stack)
-{
-    t_node *a;
-    t_node *b;
 
-    if (!stack || !*stack)
-        return (0);
-    a = *stack;
-    while (a)
-    {
-        b = a->next;
-        while (b)
-        {
-            if (a->value == b->value)
-                return (1);
-            b = b->next;
-        }
-        a = a->next;
-    }
-    return (0);
+int	ft_isrepit(t_node **stack)
+{
+	t_node	*a;
+	t_node	*b;
+
+	if (!stack || !*stack)
+		return (0);
+	a = *stack;
+	while (a)
+	{
+		b = a->next;
+		while (b)
+		{
+			if (a->value == b->value)
+				return (1);
+			b = b->next;
+		}
+		a = a->next;
+	}
+	return (0);
 }
-void check_repit(t_node **stack)
+
+void	check_repit(t_node **stack)
 {
 	if (ft_isrepit(stack))
 	{
