@@ -6,7 +6,7 @@ SRCS = 	ft_isalnum.c ft_isprint.c ft_memcmp.c \
 		ft_strlen.c ft_strrchr.c ft_toupper.c ft_calloc.c ft_isdigit.c \
 		ft_memchr.c ft_memset.c ft_putstr_fd.c ft_strjoin.c ft_strmapi.c \
 		ft_strtrim.c ft_striteri.c is_a_move.c ft_isup.c ft_isdown.c \
-		ft_isright.c ft_isleft.c print_matrix.c read_file.c free_char_matrix.c \
+		ft_isright.c ft_isleft.c print_matrix.c free_char_matrix.c \
 		copy_file.c 
 
 OBJS = $(SRCS:.c=.o)

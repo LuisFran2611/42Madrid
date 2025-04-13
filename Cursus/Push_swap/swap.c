@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:06:17 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/04/09 13:06:57 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/04/13 11:09:50 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ void	sb(t_node **stack_b)
 
 void	ss(t_node **stack_a, t_node **stack_b)
 {
-	t_node	*first;
-	t_node	*second;
 	t_node	*first;
 	t_node	*second;
 

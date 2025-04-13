@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:06:48 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/04/09 13:06:57 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/04/13 11:18:35 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void				free_stack(t_node **stack);
 void				free_stacks(t_node **stack_a, t_node **stack_b);
 int					ft_isrepit(t_node **stack);
 void				check_repit(t_node **stack);
+void				atoi_error(t_node **stack_a);
 
 #endif

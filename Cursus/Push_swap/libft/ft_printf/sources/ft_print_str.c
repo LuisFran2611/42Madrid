@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 19:29:15 by lsanchez          #+#    #+#             */
-/*   Updated: 2024/10/03 19:23:16 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/04/13 11:06:27 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_str(char *str, int *length)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!str)

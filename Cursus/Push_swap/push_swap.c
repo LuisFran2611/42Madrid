@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:06:53 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/04/09 13:09:52 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/04/13 11:24:45 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	add_node(t_node **stack, int num)
 
 	new_node = malloc(sizeof(t_node));
 	if (!new_node)
-		exit(EXIT_FAILURE);
+		atoi_error(stack);
 	new_node->value = num;
 	new_node->index = -1;
 	new_node->next = NULL;
@@ -54,34 +54,32 @@ int	is_valid_number(const char *str)
 	return (1);
 }
 
-int	atoi_int(const char *str)
+int	atoi_int(const char *str,t_node **stack_a)
 {
 	long long	result;
-	int			sign;
-	int			i;
+	int			i[2];
 
 	result = 0;
-	sign = 1;
-	i = 0;
-	while (str[i] && (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13)))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	i[1] = 1;
+	i[0] = 0;
+	while (str[i[0]] && (str[i[0]] == ' '))
+		i[0]++;
+	if (str[i[0]] == '-' || str[i[0]] == '+')
 	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
+		if (str[i[0]] == '-')
+			i[1] = -1;
+		i[0]++;
 	}
-	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+	while (str[i[0]] && (str[i[0]] >= '0' && str[i[0]] <= '9'))
 	{
-		result = result * 10 + (str[i] - '0');
-		if (result * sign > INT_MAX || result * sign < INT_MIN)
+		result = result * 10 + (str[i[0]] - '0');
+		if (result * i[1] > INT_MAX || result * i[1] < INT_MIN)
 		{
-			write(2, "Error\n", 6);
-			exit(EXIT_FAILURE);
+			atoi_error(stack_a);
 		}
-		i++;
+		i[0]++;
 	}
-	return (int)(result * sign);
+	return ((int)(result * i[1]));
 }
 
 void	split_numbers(char **split, t_node **stack_a)
@@ -103,7 +101,7 @@ void	split_numbers(char **split, t_node **stack_a)
 			free(split);
 			exit(EXIT_FAILURE);
 		}
-		num = atoi_int(split[j]);
+		num = atoi_int(split[j],stack_a);
 		add_node(stack_a, num);
 		free(split[j]);
 		j++;
@@ -127,8 +125,8 @@ int	main(int argc, char **argv)
 	while (i < argc)
 	{
 		split = ft_split(argv[i], ' ');
-		if (!split)
-			exit(EXIT_FAILURE);
+		if (*split == NULL)
+			atoi_error(stack_a);
 		split_numbers(split, stack_a);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:44:47 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/04/09 13:32:08 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/04/13 11:18:35 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,11 @@ void	check_repit(t_node **stack)
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
+}
+
+void	atoi_error(t_node **stack_a)
+{
+	write(2, "Error\n", 6);
+	free_stack(stack_a);
+	exit(EXIT_FAILURE);
 }
