@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:06:53 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/04/13 11:24:45 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/04/14 07:54:05 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	is_valid_number(const char *str)
 	return (1);
 }
 
-int	atoi_int(const char *str,t_node **stack_a)
+int	atoi_int(const char *str, t_node **stack_a)
 {
 	long long	result;
 	int			i[2];
@@ -101,7 +101,7 @@ void	split_numbers(char **split, t_node **stack_a)
 			free(split);
 			exit(EXIT_FAILURE);
 		}
-		num = atoi_int(split[j],stack_a);
+		num = atoi_int(split[j], stack_a);
 		add_node(stack_a, num);
 		free(split[j]);
 		j++;
