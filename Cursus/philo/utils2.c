@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/11 19:08:12 by lsanchez          #+#    #+#             */
+/*   Updated: 2025/07/11 19:10:32 by lsanchez         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 static int	ft_isspace(int c)
@@ -36,7 +48,7 @@ int	ft_atoi(const char *str)
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
+	int		i;
 
 	if (!s)
 		return ;

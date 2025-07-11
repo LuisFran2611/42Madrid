@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/11 19:08:15 by lsanchez          #+#    #+#             */
+/*   Updated: 2025/07/11 19:12:23 by lsanchez         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 int	parse_arguments(int argc, char *argv[], t_simulation *sim)
@@ -6,7 +18,8 @@ int	parse_arguments(int argc, char *argv[], t_simulation *sim)
 	{
 		ft_putstr_fd("Uso: ", 2);
 		ft_putstr_fd(argv[0], 2);
-		ft_putstr_fd(" num_filos time_morir time_comer time_dormir [num_comidas]\n", 2);
+		ft_putstr_fd(" num_filos time_morir", 2);
+		ft_putstr_fd(" time_comer time_dormir [num_comidas]\n", 2);
 		return (1);
 	}
 	sim->num_philosophers = ft_atoi(argv[1]);
@@ -17,8 +30,8 @@ int	parse_arguments(int argc, char *argv[], t_simulation *sim)
 	if (argc == 6)
 		sim->num_meals_to_finish = ft_atoi(argv[5]);
 	if (sim->num_philosophers <= 0 || sim->time_to_die <= 0
-		|| sim->time_to_eat <= 0 || sim->time_to_sleep <= 0
-		|| (argc == 6 && sim->num_meals_to_finish <= 0))
+		|| sim->time_to_eat <= 0 || sim->time_to_sleep <= 0 || (argc == 6
+			&& sim->num_meals_to_finish <= 0))
 	{
 		ft_putstr_fd("Error: argumentos inválidos\n", 2);
 		return (1);
@@ -86,4 +99,3 @@ int	create_threads(t_simulation *sim)
 	free(threads);
 	return (0);
 }
-

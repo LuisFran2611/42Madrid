@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "philo.h"
+
 long	get_current_time(void)
 {
 	struct timeval	tv;
@@ -60,7 +61,8 @@ void	*philosopher_routine(void *arg)
 int	check_death(t_simulation *sim, int i)
 {
 	pthread_mutex_lock(&sim->philosophers[i].lock);
-	if (get_current_time() - sim->philosophers[i].last_meal_time > sim->time_to_die)
+	if (get_current_time()
+		- sim->philosophers[i].last_meal_time > sim->time_to_die)
 	{
 		print_status(sim, sim->philosophers[i].id, "died");
 		sim->simulation_ended = 1;
@@ -91,4 +93,3 @@ int	check_meals(t_simulation *sim)
 	sim->simulation_ended = 1;
 	return (1);
 }
-
