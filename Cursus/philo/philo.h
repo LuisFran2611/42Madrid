@@ -30,3 +30,27 @@ typedef struct s_simulation
     int simulation_ended;
     long start_time;
 } t_simulation;
+
+// Function prototypes
+
+// philo.c
+long	get_current_time(void);
+void	print_status(t_simulation *sim, int id, char *status);
+void	*philosopher_routine(void *arg);
+int		check_death(t_simulation *sim, int i);
+int		check_meals(t_simulation *sim);
+
+// utils.c
+int		parse_arguments(int argc, char *argv[], t_simulation *sim);
+int		init_simulation_data(t_simulation *sim);
+int		init_philosophers(t_simulation *sim);
+int		create_threads(t_simulation *sim);
+
+// utils2.c
+long	ft_atol(const char *str);
+int		ft_atoi(const char *str);
+void	ft_putstr_fd(char *s, int fd);
+
+// monitor.c
+void	monitor_simulation(t_simulation *sim);
+void	cleanup(t_simulation *sim);
