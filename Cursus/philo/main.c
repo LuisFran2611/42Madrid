@@ -6,11 +6,20 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 19:08:10 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/07/11 19:13:40 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/07/11 19:48:22 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+void	precise_usleep(long ms)
+{
+	long	start;
+
+	start = get_current_time();
+	while ((get_current_time() - start) < ms)
+		usleep(500);
+}
 
 int	main(int argc, char *argv[])
 {

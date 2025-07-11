@@ -6,7 +6,7 @@
 /*   By: lsanchez <lsanchez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 19:08:19 by lsanchez          #+#    #+#             */
-/*   Updated: 2025/07/11 19:09:56 by lsanchez         ###   ########.fr       */
+/*   Updated: 2025/07/11 19:40:56 by lsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,14 @@ typedef struct s_simulation
 }						t_simulation;
 
 long					get_current_time(void);
+void					precise_usleep(long ms);
 void					print_status(t_simulation *sim, int id, char *status);
+void					take_forks(t_philosopher *philo);
+void					philosopher_eat(t_philosopher *philo);
 void					*philosopher_routine(void *arg);
 int						check_death(t_simulation *sim, int i);
 int						check_meals(t_simulation *sim);
+int						simulation_finished(t_simulation *sim);
 int						parse_arguments(int argc, char *argv[],
 							t_simulation *sim);
 int						init_simulation_data(t_simulation *sim);
